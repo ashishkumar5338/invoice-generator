@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Invoice Generator</h1>
+      <form id="invoiceForm" action="generate_invoice.php" method="post">
+        <label for="clientName">Client Name:</label>
+        <input type="text" id="clientName" name="clientName" required /><br />
+        <label for="clientAddress">Client Address:</label>
+        <input
+          type="text"
+          id="clientAddress"
+          name="clientAddress"
+          required
+        /><br />
+        <label for="clientState">City, State, ZIP Code:</label>
+        <input type="text" id="clientState" name="clientState" required /><br />
+        <label for="mobileNumber">Mobile Number:</label>
+        <input
+          type="tel"
+          id="mobileNumber"
+          name="clientNumber"
+          pattern="[0-9]{10}"
+        />
+        <label for="clientGST">GSTIN:</label>
+        <input type="text" id="clientGST" name="clientGST" /><br />
+        <label for="invoiceDate">Invoice Date:</label>
+        <input type="date" id="invoiceDate" name="invoiceDate" required /><br />
+        <button type="submit">Generate Invoice</button>
+      </form>
+    </div>
+
+    <!-- Section to display invoices -->
+    <div class="container">
+      <h2>Generated Invoices</h2>
+      <table id="invoiceTable">
+        <thead>
+          <tr>
+            <th>Client Name</th>
+            <th>Invoice Number</th>
+            <th>Invoice Date</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody id="invoiceTableBody">
+          <!-- Invoices will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.invoice-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .invoice-title {
+margin-bottom: -40px;
+} */
+.invoice-title h2 {
+  font-size: 24px;
+  /* Adjust the font size as needed */
+  margin: 0;
+  /* Remove default margins */
+}
+
+.invoice-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.company-logo-container {
+  margin-right: auto;
+  /* Pushes logo to the left */
+}
+
+.company-logo {
+  width: 150px;
+  /* Adjust width as needed */
+  height: auto;
+}
+
+.invoice-details h3 {
+  margin: 10px, 0px;
+  text-align: right;
+}
+
+.address-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: -25px;
+}
+
+.sender-address {
+  line-height: 0.5;
+  text-align: left;
+}
+
+.customer-address {
+  /* line-height: 0.; */
+  text-align: right;
+  /* Align the whole box to the right */
+}
+
+.customer-address>h3,
+h4 {
+  margin: 15px 0px;
+}
+
+.customer-address>P {
+  margin: 8px 0px;
+}
+
+/* .customer-address-inner {
+    text-align: left; 
+    display: inline-block; 
+  } */
+
+.table-container {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Apply word wrap to table rows and cells */
+tr,
+td {
+  word-wrap: break-word;
+}
+
+th,
+td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+thead {
+  background-color: #98fb9880;
+  /* Adjust width for "Item" column */
+  /* width: 20%; */
+}
+
+/* Adjust width for "Item" column */
+th:nth-child(1) ,th:nth-child(1){
+  width: 30%;
+  white-space: nowrap;
+}
+
+th:not(:nth-child(1)) ,td:not(:nth-child(1)){
+  width: 7%;
+  text-align: center;
+  /* Center align all th elements */
+}
+
+/* Alternate row pattern */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+  /* Light gray background for even rows */
+}
+
+tfoot>tr>td:not(:nth-child(1), :nth-child(3), :nth-child(5)) {
+  background-color: #98fb9880;
+  /* Light gray background for even rows */
+}
+
+tfoot {
+  display: none;
+}
+
+.total {
+  font-weight: bold;
+  text-align: right;
+}
+
+/* Remove outline from input boxes */
+input[type="text"],
+input[type="number"],
+select {
+  outline: none;
+}
+
+.line {
+  width: 1px;
+  background-color: #000;
+  /* Adjust the color as needed */
+  margin: 0 20px;
+  /* Adjust the margin as needed */
+}
+
+.sender-address,
+.customer-address {
+  width: calc(50% - 20px);
+  /* Adjust the width and margin to accommodate the line */
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 9999;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 10px;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media print {
+  body {
+    .invoice-container {
+      width: 100%;
+      margin: 0 auto;
+    }
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+  .invoice-container>.hide {
+    display: none;
+  }
+}
+
+.payment-info {
+  border-top: 1px dashed #000;
+  border-bottom: 1px dashed #000;
+  margin-top: 20px;
+  /* margin-bottom: 20px; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bank-details {
+  width: 70%;
+  line-height: 0.5;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bank-info {
+  margin-right: 20px;
+  /* Adjust spacing between bank details and "OR" */
+}
+
+.or {
+  margin: 0 20px;
+  /* Adjust spacing between "OR" and QR code */
+}
+
+.qr-code img {
+  height: 140px;
+  /* Set the height to your desired value */
+}
+
+.divider {
+  border-right: 1px dashed #000;
+  height: 110px;
+}
+
+.final-amount {
+  padding-right: 20px;
+  text-align: right;
+  width: 25%;
+}
+
+.amount-words {
+  /* border-top: 1px dashed #000; */
+  border-bottom: 1px dashed #000;
+  /* margin-top: 20px; */
+  /* margin-bottom: 20px; */
+}
+
+.amount-words p {
+  margin: 10px;
+}
+
+.payment-terms p {
+  margin-bottom: 0px;
+  margin-top: 5px;
+  /* margin: 0; */
+  font-size: 14px;
+  /* Adjust the font size as needed */
+  color: #999;
+  /* Light color */
+}
+
+.authorised-signatory {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.authorised-signatory h4:nth-child(1) {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.button {
+  display: block;
+  margin: 5px auto;
+  border-radius: 10px;
+  background-color: #98fb9880;
+  border: 2px solid green;
+  transition: background-color 0.3s, border-color 0.3s; /* Add smooth transition */
+}
+
+/* Hover effect */
+.button:hover {
+  cursor: pointer;
+  background-color: #98fb98; /* Change background color on hover */
+  border-color: darkgreen; /* Change border color on hover */
+}
